@@ -17,7 +17,7 @@ RC_FILE += $$PWD/logo.rc
 DESTDIR += $$PWD/../bin
 OBJECTS_DIR += $$PWD/../dir
 
-TARGET = 2048
+TARGET = 2048Game
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
