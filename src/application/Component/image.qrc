@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>keyboard/image/bg_keyboard.png</file>
+        <file>keyboard/image/btn_closed_hover.png</file>
+        <file>keyboard/image/btn_closed_normal.png</file>
+        <file>keyboard/image/btn_closed_press.png</file>
+        <file>keyboard/image/icon_keyboard.png</file>
+        <file>keyboard/image/icon_left.png</file>
+        <file>keyboard/image/icon_right.png</file>
+        <file>keyboard/image/keyboard_general_hover.png</file>
+        <file>keyboard/image/keyboard_general_normal.png</file>
+        <file>keyboard/image/keyboard_general_press.png</file>
+        <file>keyboard/image/keyboard_letter_hover.png</file>
+        <file>keyboard/image/keyboard_letter_normal.png</file>
+        <file>keyboard/image/keyboard_letter_press.png</file>
+        <file>keyboard/image/keyboard_number_hover.png</file>
+        <file>keyboard/image/keyboard_number_normal.png</file>
+        <file>keyboard/image/keyboard_number_press.png</file>
+        <file>keyboard/image/keyboard_wide_normal.png</file>
+        <file>keyboard/image/keyboard_wide_press.png</file>
+        <file>keyboard/image/icon_delete.png</file>
+        <file>keyboard/image/keyboard_wide_hover.png</file>
+        <file>messagebox/image/bg_message.png</file>
+        <file>messagebox/image/btn_cancel_normal.png</file>
+        <file>messagebox/image/btn_cancel_press.png</file>
+        <file>messagebox/image/btn_confirm_normal.png</file>
+        <file>messagebox/image/btn_confirm_press.png</file>
+        <file>screenshot/image/icon_close_normal.png</file>
+        <file>screenshot/image/icon_close_press.png</file>
+        <file>screenshot/image/icon_finish_normal.png</file>
+        <file>screenshot/image/icon_finish_press.png</file>
+        <file>screenshot/image/icon_save_normal.png</file>
+        <file>screenshot/image/icon_save_press.png</file>
+        <file>keyboard/image/bg_bottommiddle.png</file>
+        <file>keyboard/image/bg_leftbottom.png</file>
+        <file>keyboard/image/bg_leftmiddle.png</file>
+        <file>keyboard/image/bg_lefttop.png</file>
+        <file>keyboard/image/bg_middlearea.png</file>
+        <file>keyboard/image/bg_rightbottom.png</file>
+        <file>keyboard/image/bg_rightmiddle.png</file>
+        <file>keyboard/image/bg_righttop.png</file>
+        <file>keyboard/image/bg_topmiddle.png</file>
+        <file>waitting/image/icon_loading.png</file>
+        <file>waitting/image/bg_loading.png</file>
+    </qresource>
+</RCC>

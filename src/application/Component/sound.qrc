@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>keyboard/sound/0.wav</file>
+        <file>keyboard/sound/1.wav</file>
+        <file>keyboard/sound/2.wav</file>
+        <file>keyboard/sound/3.wav</file>
+        <file>keyboard/sound/4.wav</file>
+        <file>keyboard/sound/5.wav</file>
+        <file>keyboard/sound/6.wav</file>
+        <file>keyboard/sound/7.wav</file>
+        <file>keyboard/sound/8.wav</file>
+        <file>keyboard/sound/9.wav</file>
+        <file>keyboard/sound/star.wav</file>
+        <file>maskwidget/sound/WindowsBackground.wav</file>
+    </qresource>
+</RCC>
