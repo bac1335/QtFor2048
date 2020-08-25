@@ -36,42 +36,55 @@ void Q2048NumberManager::goRight()
 {
     QVector<QVector<int>> dataDes;
     for(int i = 0 ; i < m_boxMax;i++){
-        QVector<int> k = m_data.at(i);
 
+        QVector<int> k0 =  m_data.at(i);
+        QVector<int> k;
+
+        //(1)去掉-1的部分
+        for(int i = 0;i<k0.count();i++){
+            int num = k0.at(i);
+
+            if(num != -1){
+                 k.push_back(num);
+            }
+        }
+
+        //(2)同向组合
         QVector<int> kDes;
         bool step = false;
         bool firstIs = false;
 
-        for(int j = m_boxMax-1; j > 0;j--){
+        for(int j = k.count()-1; j > 0;j--){
             if(step){
                 step = false;
                 continue;
             }
+
             int code = k.at(j);
 
-            if(code != -1){
-                if(k.at(j - 1) == code){
-                    step = true;
+            if(k.at(j - 1) == code){
+                step = true;
 
-                    if(j == 1){
-                        firstIs = true;
-                    }
+                if(j == 1){
+                    firstIs = true;
+                }
 
-                    kDes.push_front(code * 2);
-                }
-                else if(code != -1){
-                    kDes.push_front(code);
-                }
+                kDes.push_front(code * 2);
+            }
+            else if(code != -1){
+                kDes.push_front(code);
             }
         }
 
-        if(!firstIs){
-            kDes.push_front( k.at(0));
+        if(!firstIs && k.count() > 0){
+            kDes.push_front(k.at(0));
         }
 
+        //补充-1
         while(kDes.count() < m_boxMax){
-            kDes.push_front( -1 );
+            kDes.push_front(-1);
         }
+
         dataDes << kDes;
      }
 
@@ -83,34 +96,44 @@ void Q2048NumberManager::goLeft()
     QVector<QVector<int>> dataDes;
     for(int i = 0 ; i < m_boxMax;i++){
 
-        QVector<int> k = m_data.at(i);
+        QVector<int> k0 =  m_data.at(i);
+        QVector<int> k;
+
+        //(1)去掉-1的部分
+        for(int i = 0;i<k0.count();i++){
+            int num = k0.at(i);
+
+            if(num != -1){
+                 k.push_back(num);
+            }
+        }
+
+        //(2)同向组合
         QVector<int> kDes;
         bool step = false;
         bool firstIs = false;
 
-        for(int j = 0; j < m_boxMax-1;j++){
+        for(int j = 0; j < k.count()-1;j++){
             if(step){
                 step = false;
                 continue;
             }
             int code = k.at(j);
 
-            if(code != -1){
-                if(k.at(j + 1) == code){
-                    step = true;
-                    if(j == 1){
-                        firstIs = true;
-                    }
-                    kDes.push_back(code * 2);
+            if(k.at(j + 1) == code){
+                step = true;
+                if(j == 1){
+                    firstIs = true;
                 }
-                else if(code != -1){
-                    kDes.push_back(code);
-                }
+                kDes.push_back(code * 2);
+            }
+            else if(code != -1){
+                kDes.push_back(code);
             }
         }
 
-        if(!firstIs){
-            kDes.push_back(k.at(m_boxMax - 1));
+        if(!firstIs && k.count() > 0){
+            kDes.push_back(k.at(k.count()- 1));
         }
 
         while(kDes.count() < m_boxMax){
@@ -128,37 +151,48 @@ void Q2048NumberManager::goUp()
     QVector<QVector<int>> data;
     transYToX(m_data,data);
 
+    //left
     QVector<QVector<int>> dataDes;
     for(int i = 0 ; i < m_boxMax;i++){
 
-        QVector<int> k = data.at(i);
+        QVector<int> k0 =  data.at(i);
+        QVector<int> k;
+
+        //(1)去掉-1的部分
+        for(int i = 0;i<k0.count();i++){
+            int num = k0.at(i);
+
+            if(num != -1){
+                 k.push_back(num);
+            }
+        }
+
+        //(2)同向组合
         QVector<int> kDes;
         bool step = false;
         bool firstIs = false;
 
-        for(int j = 0; j < m_boxMax-1;j++){
+        for(int j = 0; j < k.count()-1;j++){
             if(step){
                 step = false;
                 continue;
             }
             int code = k.at(j);
 
-            if(code != -1){
-                if(k.at(j + 1) == code){
-                    step = true;
-                    if(j == 1){
-                        firstIs = true;
-                    }
-                    kDes.push_back(code * 2);
+            if(k.at(j + 1) == code){
+                step = true;
+                if(j == 1){
+                    firstIs = true;
                 }
-                else if(code != -1){
-                    kDes.push_back(code);
-                }
+                kDes.push_back(code * 2);
+            }
+            else if(code != -1){
+                kDes.push_back(code);
             }
         }
 
-        if(!firstIs){
-            kDes.push_back(k.at(m_boxMax - 1));
+        if(!firstIs && k.count() > 0){
+            kDes.push_back(k.at(k.count()- 1));
         }
 
         while(kDes.count() < m_boxMax){
@@ -168,6 +202,7 @@ void Q2048NumberManager::goUp()
         dataDes << kDes;
      }
 
+    //left_end
 
     QVector<QVector<int>> dataDes2;
     transXToY(dataDes,dataDes2);
@@ -180,46 +215,63 @@ void Q2048NumberManager::goDown()
     QVector<QVector<int>> data;
     transYToX(m_data,data);
 
+    //right
     QVector<QVector<int>> dataDes;
     for(int i = 0 ; i < m_boxMax;i++){
-        QVector<int> k = data.at(i);
 
+        QVector<int> k0 =  data.at(i);
+        QVector<int> k;
+
+        //(1)去掉-1的部分
+        for(int i = 0;i<k0.count();i++){
+            int num = k0.at(i);
+
+            if(num != -1){
+                 k.push_back(num);
+            }
+        }
+
+        //(2)同向组合
         QVector<int> kDes;
         bool step = false;
         bool firstIs = false;
 
-        for(int j = m_boxMax-1; j > 0;j--){
+        for(int j = k.count()-1; j > 0;j--){
             if(step){
                 step = false;
                 continue;
             }
+
             int code = k.at(j);
 
-            if(code != -1){
-                if(k.at(j - 1) == code){
-                    step = true;
+            if(k.at(j - 1) == code){
+                step = true;
 
-                    if(j == 1){
-                        firstIs = true;
-                    }
+                if(j == 1){
+                    firstIs = true;
+                }
 
-                    kDes.push_front(code * 2);
-                }
-                else if(code != -1){
-                    kDes.push_front(code);
-                }
+                kDes.push_front(code * 2);
+            }
+            else if(code != -1){
+                kDes.push_front(code);
             }
         }
 
-        if(!firstIs){
-            kDes.push_front( k.at(0));
+        if(!firstIs && k.count() > 0){
+            kDes.push_front(k.at(0));
         }
 
+        //补充-1
         while(kDes.count() < m_boxMax){
-            kDes.push_front( -1 );
+            kDes.push_front(-1);
         }
+
         dataDes << kDes;
      }
+
+
+    //right_end
 
     QVector<QVector<int>> dataDes2;
     transXToY(dataDes,dataDes2);

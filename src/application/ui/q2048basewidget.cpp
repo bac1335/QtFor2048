@@ -21,5 +21,7 @@ void Q2048BaseWidget::initColor()
     m_colorMap.insert(256,"#edce61");
     m_colorMap.insert(512,"#ecc950");
     m_colorMap.insert(1024,"#edc63e");
-
+    m_colorMap.insert(2048,"#CC0066");
+    m_colorMap.insert(4096,"#CC0033");
+    m_colorMap.insert(8192,"#FF0033");
 }

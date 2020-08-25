@@ -23,7 +23,7 @@ protected:
     qreal                   m_scaleFactory = 1.0;
     QMap<int,QString>       m_colorMap;
     QVector<QVector<int>>   m_data;
-    int                     m_boxMax = 4;
+    int                     m_boxMax = 5;
     QGridLayout*            m_boxLayout = nullptr;
 };
 
