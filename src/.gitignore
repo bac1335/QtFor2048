@@ -3,3 +3,5 @@ bin
 dir
 application/debug
 application/release
+Setup/2048Game*
+Setup/Setup/2048Game*

@@ -23,7 +23,7 @@ private:
     void transYToX(QVector<QVector<int>> &list1, QVector<QVector<int>>& list2); //从右向左旋转
 
 private:
-    void        doAction(GameDir dir) override;
+    void  doAction(GameDir dir) override;
 };
 
 #endif // Q2048NUMBERMANAGER_H

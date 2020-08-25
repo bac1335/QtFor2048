@@ -2,6 +2,7 @@
 #define Q2048WIDGET_H
 
 #include "q2048basewidget.h"
+#include <QMenu>
 
 class Q2048Widget : public Q2048BaseWidget{
     Q_OBJECT
@@ -19,6 +20,7 @@ private:
 
 signals:
     void sigKeyPress(int);
+    void sigReinit();
 
 public slots:
     void onSendData(QVector<QVector<int>>,bool);

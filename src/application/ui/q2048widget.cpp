@@ -30,7 +30,15 @@ void Q2048Widget::keyPressEvent(QKeyEvent *event)
         case Qt::Key_W:
         case Qt::Key_S:
         case Qt::Key_D:
-        emit sigKeyPress(event->key());
+        case Qt::Key_Left:
+        case Qt::Key_Right:
+        case Qt::Key_Up:
+        case Qt::Key_Down:
+            emit sigKeyPress(event->key());
+        break;
+
+        case Qt::Key_Space:
+            emit sigReinit();
         break;
     }
 }
